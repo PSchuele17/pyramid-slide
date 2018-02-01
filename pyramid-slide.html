@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            background-color: rgb(190, 22, 190);
+            -webkit-text-fill-color: whitesmoke;
+            font-weight: 100;
+            padding: 30px;
+        }
+        
+        #pyramid {
+            background-color: lightgray;
+            line-height: normal;
+            font-size: 30px;
+            -webkit-text-fill-color: rgb(190, 22, 190);
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+
+        .invalid-field {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+        }
+        .box-border {
+            border: 4px solid rgb(190, 22, 190);
+            border-radius: 15px;
+        }
+        .dark{
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Pyramid Slide</h1>
+    <div class="box-border">
+    <div class="dark">
+    <form id="brick_symbol">
+        <label>
+            Brick Symbol
+            <select id="brick" onchange="updateBrickSymbol(this.value)">
+                <option value="#" selected>#</option>
+                <option value="$">$</option>
+                <option value="@">@</option>
+                <option value="X">X</option>
+            </select>
+        </label>
+    </form>
+   
+
+    <form id="draw-form">
+        <label>
+            How high?
+            <input type="range" id="height" min="1" max="25" onchange="updateTextInput(this.value)" 
+            oninput="drawPyramid(this.value,symbol)"/>
+            <span id="textInput"></span>
+        </label>
+        
+    </form>
+    </div>
+    <div id="pyramid"></div>
+    </div>
+    <script src="pyramid-slide.js"></script>
+</body>
+</html>
